@@ -12,11 +12,9 @@ Our findings suggest that:
 ## 📑 Table of Contents
 - [Introduction](#-introduction)
 - [Features](#-features)
-- [Repository Structure](#-repository-structure)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Results](#-results)
-- [Contributing](#-contributing)
 
 ---
 
@@ -36,33 +34,9 @@ This project investigates:
 - **Bias quantification** using **Jaccard similarity** on the StereoSet dataset.  
 - Analysis by stereotype category (**gender, race, religion, profession**).  
 - Chain progression tracking (bias at each step).  
-- Configurable experiments (chain length, model, dataset splits).  
+- Configurable experiments (chain length, model, dataset splits).
 
 ---
-
-## 📂 Repository Structure
-
-Examining-Bias-in-LLM-Prompt-Chaining/
-│
-├── README.md # Project documentation
-├── requirements.txt # Dependencies
-│
-├── notebooks/ # Jupyter notebooks
-│ └── bias_experiments.ipynb
-│
-├── src/ # Source code
-│ ├── data_loader.py # StereoSet loader
-│ ├── prompt_utils.py # Prompt chaining utilities
-│ ├── bias_metrics.py # Jaccard & bias scoring
-│ ├── experiment_runner.py # Experiment pipeline
-│ └── analysis.py # Visualization & results analysis
-│
-├── configs/ # Experiment configs
-│ └── default.yaml
-│
-├── results/ # Experiment outputs
-│ ├── figures/
-│ └── logs/
 
 ## ⚙️ Installation
 
@@ -78,18 +52,21 @@ cd Examining-Bias-in-LLM-Prompt-Chaining
 conda env create -f environment.yml
 conda activate llm-bias
 ```
+
+---
+
+
 ## ▶️ Usage
 ### Run Direct Prompting (Baseline)
-```python src/experiment_runner.py --mode direct --config configs/default.yaml
-```
+```python src/experiment_runner.py --mode direct --config configs/default.yaml```
 ### Run Chained Prompting
-```python src/experiment_runner.py --mode chain --chain_length 3 --config configs/default.yaml
-```
+```python src/experiment_runner.py --mode chain --chain_length 3 --config configs/default.yaml```
 ### Analyze Results
-```python src/analysis.py --results results/logs/experiment_run.json
-```
+```python src/analysis.py --results results/logs/experiment_run.json```
 
-##📊 Results (Summary)
+---
+
+## 📊 Results (Summary)
 
 Direct prompting produced low bias overall.
 
