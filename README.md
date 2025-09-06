@@ -45,25 +45,30 @@ This project investigates:
 git clone https://github.com/<your-username>/Examining-Bias-in-LLM-Prompt-Chaining.git
 cd Examining-Bias-in-LLM-Prompt-Chaining
 ```
-### Create environment (pip)
-```pip install -r requirements.txt```
-### Or with Conda
-```
-conda env create -f environment.yml
-conda activate llm-bias
-```
+### Install dependencies
+
+Make sure you have Python 3.9+ and pip installed. Then install the required packages:
+
+```pip install torch transformers datasets matplotlib pandas jupyter```
 
 ---
 
 
 ## ▶️ Usage
-### Run Direct Prompting (Baseline)
-```python src/experiment_runner.py --mode direct --config configs/default.yaml```
-### Run Chained Prompting
-```python src/experiment_runner.py --mode chain --chain_length 3 --config configs/default.yaml```
-### Analyze Results
-```python src/analysis.py --results results/logs/experiment_run.json```
+### Launch the notebook
+```jupyter notebook notebooks/bias_experiments.ipynb```
 
+### Inside the notebook
+
+1. Load the StereoSet dataset via Hugging Face.
+
+2. Run direct prompting experiments.
+
+3. Run chained prompting with configurable chain length.
+
+4. Evaluate bias using Jaccard similarity against stereotype/anti-stereotype completions.
+
+5. Visualize results (bias scores by chain length and stereotype category).
 ---
 
 ## 📊 Results (Summary)
